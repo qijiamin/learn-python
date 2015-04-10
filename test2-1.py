@@ -7,19 +7,10 @@
 #12.8
 ############ДњТы#################
 import math
-p,k,T=1.013e5,1.38e-23,300.15
-n=p/(k*T)
-print 'n=',n
-M,NA=32e-3,6.022e23
-n=M/NA
-print 'n=',n
-n,m=2.45e25,5.31e-26
-rho=n*m
-print 'rho=',rho
-R=8.31
-v=math.sqrt(3*R*T/M)
-print 'math.sqrt(v**2)=',math.sqrt(v**2)
-epsilonk=3/2*k*T
-print 'epsilonk=',epsilonk
-epsilon=m/M*5/2*R*T
-print 'epsilon=',epsilon
+p,k,T,M,NA,n,m,R=1.013e5,1.38e-23,300.15,32e-3,6.022e23,2.45e25,5.31e-26,8.31
+print 'n=p/(k*T)=',n
+print 'n=M/NA=',n
+print 'rho=n*m=',rho
+print 'v=math.sqrt(3*R*T/M)=',math.sqrt(v**2)
+print 'epsilonk=3/2*k*T=',epsilonk
+print 'epsilon=m/M*5/2*R*T=',epsilon
