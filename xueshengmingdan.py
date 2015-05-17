@@ -78,32 +78,34 @@ print '    6.最高成绩'
 print '    7.最低成绩'                              
 print '    8.平均成绩'
 print '    9.打印所有学生的姓名，学号，性别，年龄，成绩信息'
+print '   10.退出'
 print '----------------------------------------------------'
+for s in range(10000):
+    a=input('请输入要选择的操作：')
+    if a==1:
+        b=sorted(grade,two_cmp)
+        print b  
+    elif a==2:
+        print '全班人数',len(names)
+    elif a==3:
+        print '最大年龄',max(ages) 
+    elif a==4:
+        print '最小年龄',min(ages) 
+    elif a==5:
+        print '平均年龄',(1.0*sum(ages)/len(ages)) 
+    elif a==6:
+        print '最高成绩',max(grades)
+    elif a==7:
+        print '最低成绩',min(grades)
+    elif a==8:
+        print '    8.平均成绩',1.0*sum(grades)/len(grades)
+    elif a==9:
+        for name in names:
+            print '姓名:',name,'学号:',xueshengmingdan[name]['学号'],'性别:',xueshengmingdan[name]['性别'],'年龄',xueshengmingdan[name]['年龄'],'成绩信息',xueshengmingdan[name]['成绩信息']
+    else:
+        break
 
-a=input('请输入要选择的操作：')
 
-
-if a==1:
-    b=sorted(grade,two_cmp)
-    print b  
-elif a==2:
-    print '全班人数',len(names)
-elif a==3:
-    print '最大年龄',max(ages) 
-elif a==4:
-    print '最小年龄',min(ages) 
-elif a==5:
-    print '平均年龄',(1.0*sum(ages)/len(ages)) 
-elif a==6:
-    print '最高成绩',max(grades)
-elif a==7:
-    print '最低成绩',min(grades)
-elif a==8:
-    print '    8.平均成绩',1.0*sum(grades)/len(grades)
-else:
- 
-    for name in names:
-        print '姓名:',name,'学号:',xueshengmingdan[name]['学号'],'性别:',xueshengmingdan[name]['性别'],'年龄',xueshengmingdan[name]['年龄'],'成绩信息',xueshengmingdan[name]['成绩信息']
         
 
 
