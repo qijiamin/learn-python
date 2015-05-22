@@ -58,6 +58,9 @@ grade=[
 ['朱诗豪',66]]
 ages=[]
 grades=[]
+id=[]
+sex=[]
+
 names = xueshengmingdan.keys()
 
 #打印所有学生的姓名，学号，性别，年龄，成绩信息
@@ -67,6 +70,24 @@ for name in names:
     grades.append(xueshengmingdan[name]['成绩信息'])
 def two_cmp(x1,x2):
     return cmp(x1[1],x2[1])
+def zengjia():
+    o=str(raw_input('姓名：'))
+    m=input('学号：')
+    c=input('年龄：')
+    d=str(raw_input('性别：')) 
+    e=float(raw_input('成绩：')) 
+    names.extend([o]) 
+    id.extend([m]) 
+    ages.extend([c]) 
+    sex.extend([d]) 
+    grades.extend([e])
+    xueshengmingdan[o]={'学号':m,'年龄':c,'性别':d,'成绩信息':e}
+    
+    
+    n=len(name) 
+    
+
+
 print '               欢迎使用班级档案管理系统'
 print '---------------------------------------------------'
 print '    1.按成绩排序        '
@@ -78,7 +99,9 @@ print '    6.最高成绩'
 print '    7.最低成绩'                              
 print '    8.平均成绩'
 print '    9.打印所有学生的姓名，学号，性别，年龄，成绩信息'
-print '   10.退出'
+print '   10.增加学生信息'
+print '   11.显示制作人员信息'
+print '   12.退出'
 print '----------------------------------------------------'
 for s in range(10000):
     a=input('请输入要选择的操作：')
@@ -100,24 +123,20 @@ for s in range(10000):
     elif a==8:
         print '    8.平均成绩',1.0*sum(grades)/len(grades)
     elif a==9:
-        for name in names:
+
+        for name in xueshengmingdan.keys():
             print '姓名:',name,'学号:',xueshengmingdan[name]['学号'],'性别:',xueshengmingdan[name]['性别'],'年龄',xueshengmingdan[name]['年龄'],'成绩信息',xueshengmingdan[name]['成绩信息']
+    elif a==10:
+        zengjia()
+    elif a==11:
+        print '制作人员信息\n编码及测试人员：齐佳民\n收集数据：隋文武\n撰写报告：刘增富\n答辩演讲：王大勇'
     else:
         break
 
 
-        
-
-
 
 '''
-如果要增加学生                 请输入
-a={}
-a=['xxx']={
-'学号':'xxxxxx',
-'性别':'x'
-'年龄':'xx'
-'成绩信息'：'xx'}
+
 如果要删除某学生               请输入        del a['xx']
      例如       print xueshengmingdan['朱诗豪']
 如果想要修改某个学生的信息     请输入        xueshengmingdan['name']['修改的信息']='xxxx'
@@ -125,12 +144,6 @@ a=['xxx']={
 如果想查找学生的某个信息       请输入        print xueshengmingdan['name']['查找的信息']
      例如       print xueshengmingdan['黄靖宇']['学号']
 
-
-                                  制作人员信息
-                              编码及测试人员：齐佳民
-                              收集数据：隋文武
-                              撰写报告：刘增富
-                              答辩演讲：王大勇
 '''
 
 
